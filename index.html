@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/index.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://smel-pwa-cartosem.glitch.me">
+  <link rel="shortcut icon" href="https://cdn.glitch.com/a75d6e18-b525-4d4e-9f86-a443d1583657%2Fpapi-48.ico?1559217159167">
+  <script src="/index.js"></script>
+  <script>
+    // This is just to force HTTPS (can't do it statically on glitch)
+    if(location.protocol == 'http:') location.protocol = 'https:';
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('Service Worker registered', reg))
+        .catch(err => console.error('Service Worker **not** registered', err));
+    }
+    else {
+      console.warn('Service Worker not supported in this browser');
+    }    
+  </script>
+  <title>SMEL - PWA - CartSem</title>
+  <meta name="theme-color" content="lightblue">
+</head>
+<body>
+  <h1>
+    Application pour la cartographie sémantique des événements
+  </h1>
+    Check out the code <a href="http://glitch.com/edit/#!/pwa">on glitch</a>.
+</body>
+</html>
